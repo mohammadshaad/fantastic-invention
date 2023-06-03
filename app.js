@@ -6,11 +6,11 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended:true}));
-app.use(express.static("public"));                 //if we want to show images as well as css when calling port 3000
+// app.use(express.static("public"));                 //if we want to show images as well as css when calling port 3000
                                                   //we also have to specify the name of the folder here it is "public"
 
 
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + "/public/"));
 
 
 app.get("/", function(req,res){
